@@ -17,7 +17,7 @@ class Board
     self.new(tiles)
   end
 
-  def initialize(grid = Board.empty_grid)
+  def initialize(grid = self.class.empty_grid)
     @grid = grid
   end
 
