@@ -51,6 +51,7 @@ class SudokuGame
   end
 
   def process_parameters
+    board.render
     pos_to_val(retrieve_pos_from_ui, retrieve_value_from_ui)
   end
 
@@ -60,6 +61,7 @@ class SudokuGame
 
   def commence_proceedings
     process_parameters until board_process_terminates?
+    board.render
     puts "Congratulations, you win!"
   end
 
