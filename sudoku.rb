@@ -1,4 +1,4 @@
-require_relative "board"
+require_relative "./lib/board.rb"
 
 class SudokuGame
   def self.from_file(filename)
@@ -33,7 +33,13 @@ class SudokuGame
     until val && valid_val?(val)
       puts "Please enter a value between 1 and 9 (0 to clear the tile)"
       print "> "
+      begin
       val = parse_val(gets.chomp)
+      rescue
+        puts "you have enter a non numberic firgues"
+        puts ""
+        val = nil
+      end
     end
     val
   end
